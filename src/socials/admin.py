@@ -8,4 +8,5 @@ admin.site.register(Post)
 admin.site.register(SubPost)
 admin.site.register(Response)
 admin.site.register(Topic)
+admin.site.register(BookMark)
 

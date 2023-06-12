@@ -26,15 +26,22 @@ class PostBase(Base):
     votes = models.IntegerField(default=0)
     
     class Meta:
+        abstract = True;
         ordering = ['votes', '-created_at']
     
 class Post(PostBase):
     title = models.CharField(max_length=255)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, default=0)
     tags = models.ManyToManyField(Tag)
+    
+    class Meta:
+        ordering = ['votes', '-created_at']
 
 class SubPost(PostBase):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
+    
+    class Meta:
+        ordering = ['votes', '-created_at']
 
 class Response(Base):
     content = models.TextField()

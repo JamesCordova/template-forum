@@ -42,3 +42,8 @@ class Response(Base):
     subpost = models.ForeignKey(SubPost, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class BookMark(Base):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bookmarks = models.ManyToManyField(Post)
+    

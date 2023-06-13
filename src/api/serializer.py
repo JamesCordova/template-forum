@@ -4,7 +4,7 @@ from socials.models import *
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'title', 'content', 'author', 'created_at', 'updated_at', 'votes']
+        fields = '__all__'
 class SubPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubPost

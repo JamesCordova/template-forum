@@ -38,7 +38,7 @@ class Post(PostBase):
         ordering = ['votes', '-created_at']
 
 class SubPost(PostBase):
-    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
+    posted_on = models.ForeignKey(Post, on_delete=models.CASCADE)
     
     class Meta:
         ordering = ['votes', '-created_at']

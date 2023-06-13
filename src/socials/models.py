@@ -31,8 +31,8 @@ class PostBase(Base):
     
 class Post(PostBase):
     title = models.CharField(max_length=255)
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, default=0)
-    tags = models.ManyToManyField(Tag)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, default=1)
+    tags = models.ManyToManyField(Tag, blank=True)
     
     class Meta:
         ordering = ['votes', '-created_at']

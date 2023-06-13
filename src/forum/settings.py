@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'socials',
     'markdownx',
     'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [

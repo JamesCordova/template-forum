@@ -52,5 +52,5 @@ class Response(Base):
 
 class BookMark(Base):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    bookmarks = models.ManyToManyField(Post)
+    saved_post = models.ManyToManyField(Post)
     

@@ -4,12 +4,19 @@
 
 To install the pip packages we need to run the following
 
-````bash
+```bash
 python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
-````
+```
+
 ## Running
-````bash
+
+```bash
 py manage.py runserver
-````
+```
+
+## Access to admin panel
+
+User: admin
+Password: admin

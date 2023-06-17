@@ -12,7 +12,7 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
-class Tag(models.Model):
+class Tag(Base):
     name = models.CharField(max_length=255)
 
 class Topic(Base):
@@ -27,7 +27,7 @@ class PostBase(Base):
     
     class Meta:
         abstract = True;
-        ordering = ['votes', '-created_at']
+        ordering = ['-votes', '-created_at']
     
 class Post(PostBase):
     title = models.CharField(max_length=255)

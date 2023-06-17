@@ -10,7 +10,7 @@ export class ApiService {
   httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
   constructor(private http:HttpClient) { }
   getAllPosts():Observable<any>{
-    return this.http.get(this.baseurl+'/posts/', 
+    return this.http.get(this.baseurl+'/api/posts/', 
     {headers: this.httpHeaders});
   }
 }

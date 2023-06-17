@@ -19,6 +19,7 @@ from django.urls import path
 from django.urls import include
 from rest_framework import routers
 from socials import views
+from django.views.generic.base import TemplateView
 
 router = routers.DefaultRouter()
 router.register(r'posts', views.PostViewSet)
@@ -27,7 +28,9 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('markdownx/', include('markdownx.urls')),
-    path('', include((router.urls, 'app_name'))),
+    path('api/', include((router.urls, 'app_name'))),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', views.angular_index, name="home_angular")
+
     
 ]

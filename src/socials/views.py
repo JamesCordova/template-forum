@@ -9,3 +9,6 @@ from .models import *
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+def angular_index(request):
+    return render(request, 'home.html')
